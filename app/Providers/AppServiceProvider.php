@@ -24,11 +24,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // if ($this->app->isLocal()) {
-        //     } 
-        //     else {
-        //         URL::forceScheme('https');
-        //     }
+        if ($this->app->isLocal()) {
+            } 
+            else {
+                URL::forceScheme('https');
+            }
         
     }
 }
