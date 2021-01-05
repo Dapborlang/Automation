@@ -44,8 +44,3 @@ Route::post('/webhook/ip','WebhookController@ipUpdate');
 
 Route::get('ui','ButtonsController@index');
 
-Route::get('/migrate', function () {
-    $exitCode = Artisan::call('migrate');
-
-    return $exitCode;
-})->middleware('formAuth:ADM');
