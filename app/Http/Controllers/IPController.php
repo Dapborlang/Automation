@@ -79,6 +79,10 @@ class IPController extends Controller
             if (time() >= strtotime($item->time.':00') && time() < strtotime($item->time.':57')) {
                 $url='http://'.$item->Pin->Port->IP->ip.':'.$item->Pin->Port->port.'/'.$item->Pin->pin.$item->status;                        
                 $response = $client->request('GET', $url);
+
+                $Status=SwitchStatus::where('pin_id',$item->pin_id)->first();
+                $Status->status=$item->status;
+                $Status->save();
             }
         }
     }
