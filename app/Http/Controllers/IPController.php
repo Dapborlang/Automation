@@ -56,6 +56,13 @@ class IPController extends Controller
         //
     }
 
+    public function waterPump()
+    {
+        $Status=SwitchStatus::findOrfail(10);
+        $Status->status='off';
+        $Status->save();
+    }
+
     public function setStatus(Request $request)
     {
         $Status=SwitchStatus::findOrfail($request->id);
