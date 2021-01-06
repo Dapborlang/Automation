@@ -12,4 +12,9 @@ class SwitchStatus extends Model
     {
        return $this->belongsTo('App\Pin');
     }
+
+    public function Status()
+    {
+       return $this->belongsTo('App\Status','status','status');
+    }
 }

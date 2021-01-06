@@ -25,7 +25,8 @@ class ButtonsController extends Controller
             {
                 $q1->whereHas('IP', function ($q2) use ($ip)
                 {
-                    $q2->where('detail',$ip);
+                    $q2->where('detail',$ip)
+                    ->orWhere('id',$ip);
                 });
             });
         })
