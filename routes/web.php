@@ -45,3 +45,6 @@ Route::post('/webhook/ip','WebhookController@ipUpdate');
 Route::get('ui','ButtonsController@index');
 
 Route::get('/pump/0','IPController@waterPump');
+
+Route::get('mrt/rc_report','MRTserviceProviderController@RcReport');
+Route::post('mrt/rc_print','MRTserviceProviderController@RcPrint');

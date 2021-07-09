@@ -47,7 +47,16 @@
                                 </div>
                             </li>
                             @endif
-                            
+                            @if($item->role == 'MRC')
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                    Report
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ url('/') }}/mrt/rc_report">Print Recharge</a>
+                                </div>
+                            </li>
+                            @endif
                             
                         @endforeach
                         @foreach(Auth::user()->Uri as $item)
