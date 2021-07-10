@@ -32,7 +32,7 @@ class MRTserviceProviderController extends Controller
             $mrt_rc=$mrt_rc->where('mrt_agent_id',$request->agent);
         }
         $mrt_rc=$mrt_rc->get();
-        return view('MRT.Recharge.rc_print',compact('mrt_rc'));
+        return view('MRT.Recharge.rc_print',compact('mrt_rc','month'));
     }
 
 }
